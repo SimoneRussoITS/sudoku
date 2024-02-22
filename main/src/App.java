@@ -25,13 +25,11 @@ public class App {
             }
         }
 
-        // System.out.println(tabella);
-
-        stampaSoduko(coordinate, tabella);
+        System.out.println(tabella);
 
         prendiInput(coordinate);
-
-        controllaInput(coordinate);
+        stampaSoduko(coordinate);
+        // controllaInput(coordinate);
 
     }
 
@@ -59,7 +57,7 @@ public class App {
     }
 
     public static void controllaInput(int[][] tabella) {
-        //Controllo righe
+        // Controllo righe
         for (int i = 0; i < tabella.length; i++) {
             for (int j = 0; j < tabella.length; j++) {
                 if (tabella[i][j + 1] == tabella[i][j]) {
@@ -68,7 +66,7 @@ public class App {
                 }
             }
         }
-        //Controllo colonne
+        // Controllo colonne
         for (int i = 0; i < tabella.length; i++) {
             for (int j = 0; j < tabella.length; j++) {
                 if (tabella[i + 1][j] == tabella[i][j]) {
@@ -79,13 +77,30 @@ public class App {
         }
     }
 
-    public static void stampaSoduko(int[][] cor, String tab) {
+    public static void stampaSoduko(int[][] cor) {
         System.out.println("\nHai completato il sudoku");
+        String tabella = "";
         for (int i = 0; i < cor.length; i++) {
+            if (i == 0) {
+                tabella += "||";
+            }
             for (int j = 0; j < cor.length; j++) {
+                if (j == 2 || j == 5 || j == 8) {
+                    tabella += " " + cor[i][j] + " ||";
+                } else {
+                    tabella += " " + cor[i][j] + " |";
+                }
             }
 
+            if (i != 8) {
+                if (i == 2 || i == 5) {
+                    tabella += "\n\n\n||";
+                } else {
+                    tabella += "\n\n||";
+                }
+            }
         }
-        System.out.println(tab);
+
+        System.out.println(tabella);
     }
 }
