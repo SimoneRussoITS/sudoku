@@ -31,6 +31,8 @@ public class App {
 
         prendiInput(coordinate);
 
+        controllaInput(coordinate);
+
     }
 
     public static void prendiInput(int[][] cor) {
@@ -54,6 +56,27 @@ public class App {
             // SCRIVI QUALCOSA
         }
         in.close();
+    }
+
+    public static void controllaInput(int[][] tabella) {
+        //Controllo righe
+        for (int i = 0; i < tabella.length; i++) {
+            for (int j = 0; j < tabella.length; j++) {
+                if (tabella[i][j + 1] == tabella[i][j]) {
+                    System.out.println("error");
+                    break;
+                }
+            }
+        }
+        //Controllo colonne
+        for (int i = 0; i < tabella.length; i++) {
+            for (int j = 0; j < tabella.length; j++) {
+                if (tabella[i + 1][j] == tabella[i][j]) {
+                    System.out.println("error");
+                    break;
+                }
+            }
+        }
     }
 
     public static void stampaSoduko(int[][] cor, String tab) {
