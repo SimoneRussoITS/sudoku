@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner in = new Scanner(System.in);
-
         int coordinate[][] = new int[9][9];
         String tabella = "";
         for (int i = 0; i < coordinate.length; i++) {
@@ -12,38 +10,24 @@ public class App {
             }
             for (int j = 0; j < coordinate.length; j++) {
                 if (j == 2 || j == 5 || j == 8) {
-                    tabella += " "  +coordinate[i][j]+ " ||";
+                    tabella += " " + coordinate[i][j] + " ||";
                 } else {
                     tabella += " " + coordinate[i][j] + " |";
                 }
             }
-<<<<<<< HEAD
 
-            if (i != 8){
-                if(i == 2 || i == 5){
+            if (i != 8) {
+                if (i == 2 || i == 5) {
                     tabella += "\n\n\n||";
-                }else {
+                } else {
                     tabella += "\n\n||";
                 }
             }
         }
 
-            
-    
-        //System.out.println(tabella);
+        // System.out.println(tabella);
 
         stampaSoduko(coordinate, tabella);
-
-
-=======
-            if (i != 8) {
-                tabella += "\n\n||";
-            }
-
-        }
-        // System.out.println(tabella);
-        in.close();
->>>>>>> cb18b8284e19f158d91313ef2b5aefd76f073002
 
         prendiInput(coordinate);
 
@@ -70,14 +54,15 @@ public class App {
             // SCRIVI QUALCOSA
         }
         in.close();
-}
+    }
 
-    public static void stampaSoduko(int [][] cor, String tab){
+    public static void stampaSoduko(int[][] cor, String tab) {
         System.out.println("\nHai completato il sudoku");
         for (int i = 0; i < cor.length; i++) {
-            for (int j = 0; j < cor.length; j++) {    
+            for (int j = 0; j < cor.length; j++) {
             }
 
-        } System.out.println(tab);
+        }
+        System.out.println(tab);
     }
 }
