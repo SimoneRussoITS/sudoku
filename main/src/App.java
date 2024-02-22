@@ -24,11 +24,32 @@ public class App {
         }
         System.out.println(tabella);
 
-
-
-
+        controllaInput(coordinate);
+        // Nelson prendiInput(coordinate);
+        // Leo stampaSudoku(coordinate);
 
 
         in.close();
+    }
+
+    public static void controllaInput(int[][] tabella) {
+        //Controllo righe
+        for (int i = 0; i < tabella.length; i++) {
+            for (int j = 0; j < tabella.length; j++) {
+                if (tabella[i][j + 1] == tabella[i][j]) {
+                    System.out.println("error");
+                    break;
+                }
+            }
+        }
+        //Controllo colonne
+        for (int i = 0; i < tabella.length; i++) {
+            for (int j = 0; j < tabella.length; j++) {
+                if (tabella[i + 1][j] == tabella[i][j]) {
+                    System.out.println("error");
+                    break;
+                }
+            }
+        }
     }
 }
